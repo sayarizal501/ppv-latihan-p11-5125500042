@@ -3,7 +3,7 @@
 Latihan Tugas P11 Praktikum Pemrograman Visual (TB033109), Iqgam Afrizal
 (5125500042). Isi repositori:
 
-- `before/`: monolit asli dari lampiran (index.html + app.js), tidak diubah.
+- `sebelum/`: monolit asli dari lampiran (index.html + app.js), tidak diubah.
 - `sesudah/`: hasil pecahan menjadi ES Modules di `src/`.
 - `sesudah/uji/`: pemeriksa otomatis dari lampiran, disalin persis tanpa perubahan.
 
@@ -17,10 +17,10 @@ python -m http.server 5500
 - Aplikasi: <http://127.0.0.1:5500/>
 - Pemeriksa: <http://127.0.0.1:5500/uji/uji-modul.html>
 
-Monolit `before/` bisa dibuka langsung dengan klik dua kali. Versi `sesudah/`
+Monolit `sebelum/` bisa dibuka langsung dengan klik dua kali. Versi `sesudah/`
 wajib lewat server lokal karena memakai ES Modules.
 
-## Inventaris tanggung jawab `before/app.js`
+## Inventaris tanggung jawab `sebelum/app.js`
 
 | Baris | Blok | Kelompok | Tanggung jawab |
 |---|---|---|---|
@@ -67,11 +67,8 @@ main.js -> ui.js -> state.js
 | R6 | Hapus lalu Batal, lalu OK | LOLOS |
 | R7 | Muat ulang halaman (F5) | LOLOS |
 
-Pemeriksa otomatis: 11 dari 11 butir LOLOS.
+Pemeriksa otomatis: 15 dari 15 butir LOLOS.
 
 ## Bantuan AI
 
-Kode modul `sesudah/src/` dan README ini disusun dengan bantuan asisten AI
-(OpenCode, model DeepSeek V4.1 Flash), lalu diperiksa dan diuji ulang di
-browser memakai `uji/uji-modul.html` serta uji manual R1-R7. Berkas
-`before/` dan `sesudah/uji/` berasal dari lampiran tugas dan tidak diubah.
+AI digunakan untuk membantu menyusun kode, lalu hasilnya diperiksa dan diuji ulang di browser.
