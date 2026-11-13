@@ -1,4 +1,4 @@
-// state.js — data dan aturan catatan; tidak menyentuh DOM maupun localStorage langsung.
+// state.js: data dan aturan catatan; tidak menyentuh DOM maupun localStorage langsung.
 import { muat, simpan } from './storage.js';
 
 let catatan = muat();

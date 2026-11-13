@@ -1,4 +1,4 @@
-// main.js — titik masuk: memasang event formulir, pencarian, dan tombol kartu.
+// main.js: titik masuk: memasang event formulir, pencarian, dan tombol kartu.
 import { tambah, alihSemat, hapus } from './state.js';
 import { render } from './ui.js';
 

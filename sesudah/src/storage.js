@@ -1,4 +1,4 @@
-// storage.js — satu-satunya modul yang membaca dan menulis localStorage.
+// storage.js: satu-satunya modul yang membaca dan menulis localStorage.
 export const KUNCI = 'catatan-kuliah:v1';
 const KUNCI_LAMA = 'catatan-kuliah';
 const PESAN_BLOKIR = 'Penyimpanan browser tidak tersedia; perubahan hanya tersimpan di memori.';

@@ -1,4 +1,4 @@
-// ui.js — menggambar daftar catatan dan teks info ke DOM; tidak menyimpan data.
+// ui.js: menggambar daftar catatan dan teks info ke DOM; tidak menyimpan data.
 import { cari } from './state.js';
 import { KartuCatatan, PesanKosong } from './komponen.js';
 import { statusPenyimpanan } from './storage.js';

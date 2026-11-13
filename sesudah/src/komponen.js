@@ -1,4 +1,4 @@
-// komponen.js — komponen tampilan yang menerima data lewat parameter.
+// komponen.js: komponen tampilan yang menerima data lewat parameter.
 // Teks dari pengguna selalu ditulis lewat textContent, bukan innerHTML.
 export function KartuCatatan(catatan) {
   const kartu = document.createElement('article');
