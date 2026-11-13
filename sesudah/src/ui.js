@@ -1,22 +1,24 @@
-// ui.js — menggambar kartu catatan dan teks info ke DOM; tidak menyimpan data.
+// ui.js — menggambar daftar catatan dan teks info ke DOM; tidak menyimpan data.
 import { cari } from './state.js';
-
-const kartu = (c, labelSemat) =>
-  '<div class="kartu"><small>' + c.mk + '</small><h3>' + c.judul + '</h3>' +
-  '<small>' + new Date(c.dibuat).toLocaleDateString('id-ID') + '</small>' +
-  '<div class="aksi"><button type="button" data-aksi="semat" data-id="' + c.id + '">' + labelSemat + '</button>' +
-  '<button type="button" data-aksi="hapus" data-id="' + c.id + '">Hapus</button></div></div>';
+import { KartuCatatan, PesanKosong } from './komponen.js';
+import { statusPenyimpanan } from './storage.js';
 
 export function render(kataCari) {
   const hasil = cari(kataCari);
-  const sematan = document.getElementById('sematan');
-  const semuaEl = document.getElementById('semua');
-  const info = document.getElementById('info');
   const disematkan = hasil.filter((c) => c.disematkan);
 
-  sematan.innerHTML = disematkan.map((c) => kartu(c, 'Lepas')).join('') ||
-    '<p class="kosong">Belum ada catatan yang disematkan.</p>';
-  semuaEl.innerHTML = hasil.map((c) => kartu(c, c.disematkan ? 'Lepas' : 'Sematkan')).join('') ||
-    '<p class="kosong">Tidak ada catatan.</p>';
-  info.textContent = hasil.length + ' catatan, ' + disematkan.length + ' disematkan';
+  document.getElementById('sematan').replaceChildren(
+    ...(disematkan.length
+      ? disematkan.map((c) => KartuCatatan(c))
+      : [PesanKosong('Belum ada catatan yang disematkan.')]));
+
+  document.getElementById('semua').replaceChildren(
+    ...(hasil.length
+      ? hasil.map((c) => KartuCatatan(c))
+      : [PesanKosong('Tidak ada catatan.')]));
+
+  const peringatan = statusPenyimpanan();
+  document.getElementById('info').textContent =
+    `${hasil.length} catatan, ${disematkan.length} disematkan` +
+    (peringatan ? ` — ${peringatan}` : '');
 }
